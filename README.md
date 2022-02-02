@@ -24,8 +24,8 @@ The inflation-deflation method ties in with the [Manifold Flow](https://github.c
 
 We have shown that our method performes well on a wide range of manifolds:
 
-manifold | data dimension | manifold dimension | --dataset argument | --latent_distribution arguments
---- | --- | --- 
+manifold | data dimension | manifold dimension | argument to `--dataset` | argument to `--latent_distribution` 
+--- | --- | --- | --- | ---
 Sphere | 3 | 2 | sphere | mixture, correlated
 Torus | 3 | 2 | torus | mixture, correlated
 Hyperboloid | 3 | 2 | hyperboloid | mixture, correlated, unimodal
