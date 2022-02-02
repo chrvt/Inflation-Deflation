@@ -34,7 +34,7 @@ Swiss Roll | 3 | 2 | swiss_roll | mixture, correlated
 Hyperboloid-Sphere | 3 | 2 | spheroid | mixture, correlated
 Stiefel, SO(2)| 4 | 1 | stiefel | mixture
 
-To use the model for your data, you need to create a simulator (see [experiments/datasets](experiments/datasets)), and add it to [experiments/datasets/__init__.py](experiments/datasets/__init__.py). If you have problems with that, please don't hesitate to contact us. For the experiments on MNSIT, we used the original implementation of the the [Manifold Flow](https://github.com/johannbrehmer/manifold-flow).
+To use the model for your data, you need to create a simulator (see [experiments/datasets](experiments/datasets)), and add it to [experiments/datasets/__init__.py](experiments/datasets/__init__.py). If you have problems with that, please don't hesitate to contact us. For the experiments on MNSIT, we used the original implementation of the [Manifold Flow](https://github.com/johannbrehmer/manifold-flow), see [experiments/MNIST](experiments/MNIST) for the necessary additions. Everything necessary to re-plot the figures from the paper can be found in [experiments/plotting](experiments/plotting).
 
 ### Training & Evaluation & Figures
 

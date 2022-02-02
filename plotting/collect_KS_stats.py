@@ -8,7 +8,7 @@ import numpy as np
 import os, re
 from shutil import copyfile
 
-root_dir = r'D:\PROJECTS\Inflation_deflation\results\stiefel'  #swiss_roll, torus, sphere, spheroid, thin_spiral, hyperboloid
+root_dir = r'./results/stiefel'  #swiss_roll, torus, sphere, spheroid, thin_spiral, hyperboloid
 
 
 for density in ['mixture','correlated','unimodal','exponential']: # ,'mixture' 'exponential', 'unimodal' 'unimodal', 'exponential',
