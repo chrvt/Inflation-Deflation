@@ -2,8 +2,7 @@
 """
 Created on Tue Jan 11 16:46:49 2022
 Simulating Sigma bounds:
-    - for constant curvature manifolds, sigma bounds are analytical
-    - else, sigma bound is estimated using samples
+    - sigma bounds are estimated using samples
     - 2 options: maximum (taking maximum over all), average (taking average over all)
 @author: horvat
 """
@@ -23,7 +22,7 @@ parser.add_argument("--noise_type", type=str, default="gaussian", help="Noise ty
 parser.add_argument('--sig2', type=float, default='0.0', help='Noise magnitude')
 args = parser.parse_args()
 
-manifolds = ['swiss_roll','sphere','torus','hyperboloid','thin_spiral','spheroid','stiefel'] # ['torus','hyperboloid',,'thin_spiral',,'spheroid']
+manifolds = ['swiss_roll','sphere','torus','hyperboloid','thin_spiral','spheroid','stiefel'] 
 latents = ['mixture','unimodal','correlated','exponential']
 save = True
 
@@ -54,7 +53,7 @@ for manifold in manifolds:
         args.dataset = manifold
         args.latent_distribution = latent_distribution
 
-        save_path = os.path.join(r'D:\PROJECTS\Inflation_deflation\results',args.dataset,args.latent_distribution)
+        save_path = os.path.join(r'./results',args.dataset,args.latent_distribution)
         
         if not Path(save_path).is_dir():
             continue                
@@ -120,5 +119,3 @@ for manifold in manifolds:
         if save:
             np.save(os.path.join(save_path,'sigma_bounds.npy'),sigma_bounds)  #'sigma_bounds.npy'
             
-
-##To Do: for all simulator.calculate_bound, lower bound 1 time enough, embed in img generator?

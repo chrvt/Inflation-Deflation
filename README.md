@@ -22,25 +22,23 @@ The inflation-deflation method ties in with the [Manifold Flow](https://github.c
 
 ### Experiments
 
-We have shown that our method performes well on a wide range of manifolds. In the following table, we refer to the corresponding arguments to reproduce the results from the paper.
+We have shown that our method performes well on a wide range of manifolds:
 
-Manifold | Data dimension | Manifold dimension | Arguments to `train.py`, and `evaluate.py`
---- | --- | --- | ---
-Sphere | 3 | 2 |  `--dataset gan2d`
-Torus | 3 | 2|  `--dataset gan64d`
-Hyperboloid | 3 | 2 |  `--dataset celeba`
-Thin spiral | 2 | 1 |  `--dataset thin_spiral`
-Swiss Roll | 3 | 2 |  `--dataset thin_spiral`
-Hyperboloid-Sphere | 3 | 2| `--dataset thin_spiral`
-Stiefel, SO(2)| 4 | 1| `--dataset thin_spiral`
-MNIST digit 1 | 784 | ? `--dataset thin_spiral`
+manifold | data dimension | manifold dimension | --dataset argument | --latent_distribution arguments
+--- | --- | --- 
+Sphere | 3 | 2 | sphere | mixture, correlated
+Torus | 3 | 2 | torus | mixture, correlated
+Hyperboloid | 3 | 2 | hyperboloid | mixture, correlated, unimodal
+Thin spiral | 2 | 1 | thin_spiral | exponential
+Swiss Roll | 3 | 2 | swiss_roll | mixture, correlated
+Hyperboloid-Sphere | 3 | 2 | spheroid | mixture, correlated
+Stiefel, SO(2)| 4 | 1 | stiefel | mixture
 
-To use the model for your data, you need to create a simulator (see [experiments/datasets](experiments/datasets)), and add it to [experiments/datasets/__init__.py](experiments/datasets/__init__.py). If you have problems with that, please don't hesitate to contact us.
+To use the model for your data, you need to create a simulator (see [experiments/datasets](experiments/datasets)), and add it to [experiments/datasets/__init__.py](experiments/datasets/__init__.py). If you have problems with that, please don't hesitate to contact us. For the experiments on MNSIT, we used the original implementation of the the [Manifold Flow](https://github.com/johannbrehmer/manifold-flow).
 
+### Training & Evaluation & Figures
 
-### Training & Evaluation
-
-The configurations for the models and hyperparameter settings used in the paper can be found in [experiments/configs](experiments/configs). 
+The configs for the sphere can be found in [experiments/configs](experiments/configs). To train the model on a cluster, please consider [experiments/cluster](experiments/cluster). Experiments on other manifolds can be adapted appropriate.
 
 ### Acknowledgements
 

@@ -4,9 +4,7 @@ from .base import IntractableLikelihoodError, DatasetNotAvailableError
 from .sphere_simulator import SphereSimulator
 from .torus_simulator import TorusSimulator
 from .hyperboloid_simulator import HyperboloidSimulator
-from .polynomial_surface_simulator import PolynomialSurfaceSimulator
 from .thin_spiral_simulator import ThinSpiralSimulator
-from .two_thin_spirals_simulator import TwoThinSpiralsSimulator
 from .swiss_roll_simulator import SwissRollSimulator
 from .von_Mises_on_circle import VonMisesSimulator
 from .spheroid_simulator import SpheRoidSimulator
@@ -27,8 +25,6 @@ def load_simulator(args):
         simulator = HyperboloidSimulator(latent_distribution=args.latent_distribution,noise_type=args.noise_type)
     elif args.dataset == "thin_spiral":    
         simulator = ThinSpiralSimulator(latent_distribution=args.latent_distribution,noise_type=args.noise_type)
-    elif args.dataset == "two_thin_spirals":    
-        simulator = TwoThinSpiralsSimulator(latent_distribution=args.latent_distribution,noise_type=args.noise_type)
     elif args.dataset == "swiss_roll":    
         simulator = SwissRollSimulator(epsilon=args.sig2, latent_distribution=args.latent_distribution,noise_type=args.noise_type)
     elif args.dataset == "von_Mises_circle":
